@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+}
+
+/* HUD pulse */
+@keyframes hud-pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.hud-pulse {
+  animation: hud-pulse 2s ease-in-out infinite;
+}
+
+/* Grid overlay */
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(159,221,234,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(159,221,234,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* Bike glow */
+.bike-glow {
+  background: radial-gradient(ellipse 60% 40% at 50% 60%, rgba(159,221,234,0.18) 0%, transparent 70%);
+}
+
+/* Circuit border hover */
+.card-circuit {
+  border: 1px solid #222222;
+  transition: border-color 150ms ease;
+}
+.card-circuit:hover {
+  border-color: #9FDDEA;
+}
+
+/* Model fade */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0D0D0D; }
+::-webkit-scrollbar-thumb { background: #222222; border-radius: 0; }
+::-webkit-scrollbar-thumb:hover { background: #9FDDEA; }
